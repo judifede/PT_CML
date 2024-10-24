@@ -1,0 +1,16 @@
+{
+  "name": "pt_cml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter \"**\" dev",
+    "start": "pnpm --filter \"**\" start",
+    "back": "pnpm --filter \"backend\" dev",
+    "front": "pnpm --filter \"frontend\" dev",
+    "test": "pnpm --filter \"**\" test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
