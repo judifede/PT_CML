@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-     <h1>Prueba Técnica CML</h1>
+     <h1 className='text-2xl'>Prueba Técnica CML</h1>
     </>
   )
 }
