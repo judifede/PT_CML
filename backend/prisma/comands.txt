@@ -1,0 +1,8 @@
+npx prisma studio
+    Lanza el editor de Prisma Studio en localhost:5555
+
+npx prisma db pull
+    Introspecciona la base de datos y actualiza el schema.
+
+npx prisma db push
+    Sincroniza el schema con la base de datos sin crear migraciones.
