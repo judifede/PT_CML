@@ -1,0 +1,622 @@
+[
+  {
+    "name": "Cada momento es especial para quien tiene la visión de reconocerlo como tal",
+    "author": "Henry Miller",
+    "creativity": 1
+  },
+  {
+    "name": "Sé tu mismo",
+    "author": "Lao Tzu",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es muy peligrosa. No por las personas que hacen el mal, sino por las que se sientan a ver lo que pasa",
+    "author": "Albert Einstein",
+    "creativity": 1
+  },
+  {
+    "name": "Asegúrate de que colocas tus pies en el lugar correcto y luego, mantente firme",
+    "author": "Abraham Lincoln",
+    "creativity": 1
+  },
+  {
+    "name": "La felicidad no brota de la razón, sino de la imaginación",
+    "author": "Immanuel Kant",
+    "creativity": 1
+  },
+  {
+    "name": "No se puede encontrar la paz evitando la vida",
+    "author": "Virginia Woolf",
+    "creativity": 1
+  },
+  {
+    "name": "Lo que haces por ti se desvanece cuando mueres. Lo que haces por el resto conforma tu legado",
+    "author": "Kalu Ndukwe Kalu",
+    "creativity": 1
+  },
+  {
+    "name": "Buenos amigos, buenos libros y tener una conciencia tranquila: esta es la vida ideal",
+    "author": "Mark Twain",
+    "creativity": 1
+  },
+  {
+    "name": "Cuando las oportunidades no llamen a tu puerta, construye una",
+    "author": "Milton Berle",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es un viaje de autodescubrimiento, atrévete a explorar",
+    "author": "Anaïs Nin",
+    "creativity": 1
+  },
+  {
+    "name": "Al cabo de los años he observado que la belleza, como la felicidad, es frecuente. No pasa un día en que no estemos, un instante, en el paraíso",
+    "author": "Jorge Luis Borges",
+    "creativity": 1
+  },
+  {
+    "name": "La risa es el Sol que ahuyenta el invierno del rostro humano",
+    "author": "Victor Hugo",
+    "creativity": 1
+  },
+  {
+    "name": "La felicidad es amor, no otra cosa. El que sabe amar es feliz",
+    "author": "Hermann Hesse",
+    "creativity": 1
+  },
+  {
+    "name": "El futuro pertenece a quienes creen en la belleza de sus sueños",
+    "author": "Eleanor Roosevelt",
+    "creativity": 1
+  },
+  {
+    "name": "Un día sin reír es un día perdido",
+    "author": "Charles Chaplin",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es como el jazz… es mucho mejor si es improvisada",
+    "author": "George Gershwin",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es la constante sorpresa de saber que existo",
+    "author": "R. Tagore",
+    "creativity": 1
+  },
+  {
+    "name": "Los sabios son los que buscan la sabiduría los necios piensan haberla encontrado",
+    "author": "Napoleón",
+    "creativity": 1
+  },
+  {
+    "name": "No lastimes a los demás con lo que te causa dolor a ti mismo",
+    "author": "Buda",
+    "creativity": 1
+  },
+  {
+    "name": "Recuerda que la felicidad no depende de quién eres o qué tienes depende únicamente de lo que piensas",
+    "author": "Dale Carnegie",
+    "creativity": 1
+  },
+  {
+    "name": "Un hombre que no se alimenta de sus sueños envejece pronto",
+    "author": "William Shakespeare",
+    "creativity": 1
+  },
+  {
+    "name": "El pesimista se queja del viento el optimista espera que cambie el realista ajusta las velas",
+    "author": "William George Ward",
+    "creativity": 1
+  },
+  {
+    "name": "Cuando las cosas se ponen difíciles, lo duro es ponerse en marcha",
+    "author": "Joseph Kennedy",
+    "creativity": 1
+  },
+  {
+    "name": "La vida no es justa, es apenas más justa que la muerte, eso es todo",
+    "author": "William Goldman",
+    "creativity": 1
+  },
+  {
+    "name": "Amar y sufrir es, a la larga, la única forma de vivir con plenitud y dignidad",
+    "author": "Gregorio Marañón",
+    "creativity": 1
+  },
+  {
+    "name": "La vida no es siempre una cuestión de tener buenas cartas, sino, a veces, de jugar bien una mala mano",
+    "author": "Jack London",
+    "creativity": 1
+  },
+  {
+    "name": "Es curioso que la vida, cuanto más vacía, más pesa",
+    "author": "León Daudí",
+    "creativity": 1
+  },
+  {
+    "name": "Me entenderás… cuando te duela el alma como a mí",
+    "author": "Frida Kahlo",
+    "creativity": 1
+  },
+  {
+    "name": "La vida no es sino una continua sucesión de oportunidades para sobrevivir",
+    "author": "Gabriel García Márquez",
+    "creativity": 1
+  },
+  {
+    "name": "Si el hombre no ha descubierto nada por lo que morir, no es digno de vivir",
+    "author": "Martin Luther King",
+    "creativity": 1
+  },
+  {
+    "name": "La experiencia no es lo que te ocurre, es lo que haces con lo que te ocurre",
+    "author": "Aldous Huxley",
+    "creativity": 1
+  },
+  {
+    "name": "La vida no va de encontrarse a uno mismo, sino de crearse a uno mismo",
+    "author": "George Bernard Shaw",
+    "creativity": 1
+  },
+  {
+    "name": "En la vida hay algo peor que el fracaso: el no haber intentado nada",
+    "author": "Franklin D. Roosvelt",
+    "creativity": 1
+  },
+  {
+    "name": "La peor lucha es la que no se hace",
+    "author": "Karl Marx",
+    "creativity": 1
+  },
+  {
+    "name": "Perder el tiempo que disfruto no es tiempo perdido",
+    "author": "Marta Troly",
+    "creativity": 1
+  },
+  {
+    "name": "Aquellos que no se mueven no notan sus cadenas",
+    "author": "Rosa Luxemburgo",
+    "creativity": 1
+  },
+  {
+    "name": "Deja de pensar en la vida y resuélvete a vivirla",
+    "author": "Paulo Coelho",
+    "creativity": 1
+  },
+  {
+    "name": "No hay lugar donde ir salvo a cualquier parte, así que sigue caminando",
+    "author": "Jack Kerouac",
+    "creativity": 1
+  },
+  {
+    "name": "Saber lo que hay que hacer elimina el miedo",
+    "author": "Rosa Parks",
+    "creativity": 1
+  },
+  {
+    "name": "Sólo aquellos que se arriesgan a caer pueden conseguir grandes cosas",
+    "author": "Robert F. Kennedy",
+    "creativity": 1
+  },
+  {
+    "name": "El éxito no es el final, el fracaso no es fatal: es el coraje por seguir lo que cuenta",
+    "author": "Winston S. Churchill",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es como una bicicleta: si quieres mantener el equilibrio, pedalea hacia delante",
+    "author": "Albert Einstein",
+    "creativity": 1
+  },
+  {
+    "name": "Convierte siempre una situación negativa en una positiva",
+    "author": "Michael Jordan",
+    "creativity": 1
+  },
+  {
+    "name": "Aprendí que no se puede dar marcha atrás, que la esencia de la vida es ir hacia adelante",
+    "author": "Agatha Christie",
+    "creativity": 1
+  },
+  {
+    "name": "Un sólo pensamiento positivo por la mañana puede iluminar todo un día",
+    "author": "Dalai Lama",
+    "creativity": 1
+  },
+  {
+    "name": "Con el nuevo día llega nueva fuerza y nuevos pensamientos",
+    "author": "Eleanor Roosevelt",
+    "creativity": 1
+  },
+  {
+    "name": "Todos tus sueños se harán realidad si tienes el coraje de perseguirlos",
+    "author": "Walt Disney",
+    "creativity": 1
+  },
+  {
+    "name": "Deja marcado en tu corazón que cada día es el mejor día del año",
+    "author": "Ralph Waldo Emerson",
+    "creativity": 1
+  },
+  {
+    "name": "Que no te avergüencen tus fracasos. Aprende de ellos y vuelve a empezar",
+    "author": "Richard Branson",
+    "creativity": 1
+  },
+  {
+    "name": "Recuerda que sólo porque tocaste fondo, no significa que tengas que quedarte allí",
+    "author": "Robert Downey Jr",
+    "creativity": 1
+  },
+  {
+    "name": "La única diferencia entre el éxito y el fracaso es la capacidad de actuar",
+    "author": "Alexander Graham Bell",
+    "creativity": 1
+  },
+  {
+    "name": "Si puedes cambiar tu mente, puedes cambiar el mundo",
+    "author": "William James",
+    "creativity": 1
+  },
+  {
+    "name": "El fracaso es la oportunidad de comenzar de nuevo con más inteligencia",
+    "author": "Henry Ford",
+    "creativity": 1
+  },
+  {
+    "name": "El sentido común no es resultado de la educación",
+    "author": "Victor Hugo",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el arte de hacer visibles las cosas invisibles",
+    "author": "Jean-François Lyotard",
+    "creativity": 1
+  },
+  {
+    "name": "No todos los lectores son líderes, pero todos los lectores se convierten en líderes",
+    "author": "Harry S. Truman",
+    "creativity": 1
+  },
+  {
+    "name": "Quien se atreve a enseñar, nunca debe dejar de aprender",
+    "author": "John Cotton Dana",
+    "creativity": 1
+  },
+  {
+    "name": "Por la ignorancia nos equivocamos, y por las equivocaciones aprendemos",
+    "author": "Proverbio romano",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el vestido de gala para asistir a la fiesta de la vida",
+    "author": "Miguel Rojas Sánchez",
+    "creativity": 1
+  },
+  {
+    "name": "A menudo damos a los niños respuestas que recordar en lugar de problemas a resolver",
+    "author": "Roger Lewin",
+    "creativity": 1
+  },
+  {
+    "name": "La mejor arma contra la ignorancia es el estudio",
+    "author": "Rafael Escandón",
+    "creativity": 1
+  },
+  {
+    "name": "La enseñanza que deja huella no es la que se hace de cabeza a cabeza, sino de corazón a corazón",
+    "author": "Howard G. Hendricks",
+    "creativity": 1
+  },
+  {
+    "name": "Educar la mente sin educar el corazón no es educación en absoluto",
+    "author": "Aristóteles",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el único camino para escapar de la esclavitud mental",
+    "author": "Frederick Douglass",
+    "creativity": 1
+  },
+  {
+    "name": "Un niño con falta de educación es un niño perdido",
+    "author": "John F. Kennedy",
+    "creativity": 1
+  },
+  {
+    "name": "Un ser humano no alcanza sus cotas más altas hasta que está educado",
+    "author": "Horace Mann",
+    "creativity": 1
+  },
+  {
+    "name": "La educación genera confianza. La confianza genera esperanza. La esperanza genera paz",
+    "author": "Confucio",
+    "creativity": 1
+  },
+  {
+    "name": "Antes de hablar, piensa pero antes de pensar, lee",
+    "author": "Frances Ann Lebowitz",
+    "creativity": 1
+  },
+  {
+    "name": "La sabiduría no es producto de la escolarización, sino de un intento a lo largo de la vida de adquirirlo",
+    "author": "Albert Einstein",
+    "creativity": 1
+  },
+  {
+    "name": "El estudio sin deseo estropea la memoria y no retiene nada de lo que toma",
+    "author": "Leonardo da Vinci",
+    "creativity": 1
+  },
+  {
+    "name": "La vida debe ser una incesante educación",
+    "author": "Gustave Flaubert",
+    "creativity": 1
+  },
+  {
+    "name": "El conocimiento te dará la oportunidad de marcar una diferencia",
+    "author": "Claire Fagin",
+    "creativity": 1
+  },
+  {
+    "name": "Toda vida es una constante educación",
+    "author": "Eleanor Roosevelt",
+    "creativity": 1
+  },
+  {
+    "name": "Las plantas las endereza el cultivo a los hombres, la educación",
+    "author": "J.J. Rousseau",
+    "creativity": 1
+  },
+  {
+    "name": "La clave de la educación no es enseñar, es despertar",
+    "author": "Ernest Renan",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el acto de despertar la curiosidad de la mente y alimentarla",
+    "author": "Bob Dylan",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el cimiento sobre el cual construimos nuestro futuro",
+    "author": "Christine Gregoire",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el proceso en el que descubrimos que, aprendiendo, aprendemos a aprender",
+    "author": "José Saramago",
+    "creativity": 1
+  },
+  {
+    "name": "La educación no es preparación para la vida la educación es la vida en sí misma",
+    "author": "John Dewey",
+    "creativity": 1
+  },
+  {
+    "name": "Pensar es fácil, actuar es difícil, y poner los pensamientos de uno mismo en acción es lo más difícil del mundo",
+    "author": "Goethe",
+    "creativity": 1
+  },
+  {
+    "name": "Debes de estar dispuesto a ser un principiante cada una de tus mañanas",
+    "author": "Meister Eckhart",
+    "creativity": 1
+  },
+  {
+    "name": "Enseñar es aprender dos veces",
+    "author": "Joseph Joubert",
+    "creativity": 1
+  },
+  {
+    "name": "La educación es el arma más poderosa que puedes usar para cambiar el mundo",
+    "author": "Nelson Mandela",
+    "creativity": 1
+  },
+  {
+    "name": "Los niños tienen que ser enseñados sobre cómo pensar, no qué pensar",
+    "author": "Margaret Mead",
+    "creativity": 1
+  },
+  {
+    "name": "Vivir sin filosofar es, propiamente, tener los ojos cerrados, sin tratar de abrirlos jamás",
+    "author": "René Descartes",
+    "creativity": 1
+  },
+  {
+    "name": "Una inversión en conocimiento paga el mejor interés",
+    "author": "Benjamin Franklin",
+    "creativity": 1
+  },
+  {
+    "name": "Siempre que enseñes, enseña a la vez a dudar de lo que enseñas",
+    "author": "José Ortega y Gasset",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es el anhelo de salir de uno mismo",
+    "author": "Charles Baudelaire",
+    "creativity": 1
+  },
+  {
+    "name": "Las cartas de amor se empiezan sin saber lo que se va a decir y se terminan sin saber lo que se ha dicho",
+    "author": "Jean-Jacques Rousseau",
+    "creativity": 1
+  },
+  {
+    "name": "Ven a dormir conmigo: no haremos el amor, él nos lo hará",
+    "author": "Julio Cortázar",
+    "creativity": 1
+  },
+  {
+    "name": "No amas a alguien porque sea perfecto, lo amas a pesar de que no lo sea",
+    "author": "Jodie Picoul",
+    "creativity": 1
+  },
+  {
+    "name": "Verás, hasta que te conocí, sólo había experimentado el deseo. El amor, nunca",
+    "author": "Pierre Choderlos de Laclos",
+    "creativity": 1
+  },
+  {
+    "name": "Te quiero no por quien eres, sino por quien soy cuando estoy contigo",
+    "author": "Gabriel García Márquez",
+    "creativity": 1
+  },
+  {
+    "name": "El amor no tiene cura, pero es la única cura para todos los males",
+    "author": "Leonard Cohen",
+    "creativity": 1
+  },
+  {
+    "name": "Escoge una persona que te mire como si fueses magia",
+    "author": "Frida Kahlo",
+    "creativity": 1
+  },
+  {
+    "name": "Temer al amor es temer a la vida, y los que temen a la vida ya están medio muertos",
+    "author": "Bertrand Russell",
+    "creativity": 1
+  },
+  {
+    "name": "Sabes que estás enamorado cuando no quieres acostarte porque la realidad es por fin mejor que tus sueños",
+    "author": "Dr. Seuss",
+    "creativity": 1
+  },
+  {
+    "name": "Yo me enamoré de sus demonios. Ella, de mi oscuridad. Éramos el infierno perfecto",
+    "author": "Mario Benedetti",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es el deseo de encontrar a la mitad perdida de nosotros mismos",
+    "author": "Milan Kundera",
+    "creativity": 1
+  },
+  {
+    "name": "La raíz de todas las pasiones es el amor. De él nace la tristeza, el gozo, la alegría y la desesperación",
+    "author": "Lope de Vega",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es invisible y entra y sale por donde quiere sin que nadie le pida cuenta de sus hechos",
+    "author": "Miguel de Cervantes",
+    "creativity": 1
+  },
+  {
+    "name": "Hay amores tan bellos que justifican todas las locuras que hacen cometer",
+    "author": "Plutarco",
+    "creativity": 1
+  },
+  {
+    "name": "Ni la ausencia ni el tiempo son nada cuando se ama",
+    "author": "Alfred de Musset",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es como la música, la pintura, los libros… no se busca, se encuentra",
+    "author": "Miguel de Cervantes",
+    "creativity": 1
+  },
+  {
+    "name": "El amor de los jóvenes en verdad no está en su corazón, sino más bien en sus ojos",
+    "author": "William Shakespeare",
+    "creativity": 1
+  },
+  {
+    "name": "Hay besos que en los labios dejan huellas como un campo de sol entre dos hielos",
+    "author": "Gabriela Mistral",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es la alegría de los buenos, la reflexión de los sabios, el asombro de los incrédulos",
+    "author": "Platón",
+    "creativity": 1
+  },
+  {
+    "name": "Lo que se hace por amor está más allá del bien y del mal",
+    "author": "Friedrich Nietzsche",
+    "creativity": 1
+  },
+  {
+    "name": "Si tuviera que volver a comenzar mi vida, intentaría encontrarte mucho antes",
+    "author": "Antoine de Saint-Exupéry",
+    "creativity": 1
+  },
+  {
+    "name": "La vida es la flor de la que el amor es la miel",
+    "author": "Victor Hugo",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es mejor maestro que el deber",
+    "author": "Albert Einstein",
+    "creativity": 1
+  },
+  {
+    "name": "El amor, por no tener geografía, no conoce límites",
+    "author": "Truman Capote",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es una flor que debes dejar crecer",
+    "author": "John Lennon",
+    "creativity": 1
+  },
+  {
+    "name": "El crimen del amor es el olvido",
+    "author": "Maurice Chevalier",
+    "creativity": 1
+  },
+  {
+    "name": "Amamos porque esa es la única gran aventura",
+    "author": "Nikki Giovanni",
+    "creativity": 1
+  },
+  {
+    "name": "El amor es la poesía de los sentidos",
+    "author": "Honoré de Balzac",
+    "creativity": 1
+  },
+  {
+    "name": "Amar no es mirarse el uno al otro es mirar juntos en la misma dirección",
+    "author": "Antoine de Saint-Exupéry",
+    "creativity": 1
+  },
+  {
+    "name": "El amor conquista todas las cosas. Démosle paso al amor",
+    "author": "Virgilio",
+    "creativity": 1
+  },
+  {
+    "name": "La medida del amor es amar sin medida",
+    "author": "San Agustín",
+    "creativity": 1
+  },
+  {
+    "name": "Quiero llenar mi boca con tu nombre",
+    "author": "Pablo Neruda",
+    "creativity": 1
+  },
+  {
+    "name": "El amor intenso no mide, sino que simplemente da",
+    "author": "Teresa de Calcuta",
+    "creativity": 1
+  },
+  {
+    "name": "Si no tardas mucho, te espero toda la vida",
+    "author": "Oscar Wilde",
+    "creativity": 1
+  },
+  {
+    "name": "El amor verdadero es el que no atosiga, no aísla, no rechaza, no persigue, solamente acepta",
+    "author": "Antonio Gala",
+    "creativity": 1
+  },
+  {
+    "name": "Haz el amor y no la guerra",
+    "author": "John Lenon",
+    "creativity": 1
+  }
+]

@@ -1,43 +1,59 @@
-import { prisma } from "../db/index.db.js";
+import { prisma } from '../db/index.db.js'
 
 /* 
 Devuelve una frase aleatoria de uno de los tipos de creativity
-creativityLevel -> Tabla creativity puede ser 1 o 0
+creativity -> Tabla creativity puede ser 1 o 0
 */
-const getRandomPhrase = async (creativityLevel) => {
-    const randomPhrase = await prisma.$queryRaw`
+const getRandomPhrase = async (creativity) => {
+  const randomPhrase = await prisma.$queryRaw`
         SELECT * FROM Phrase
-        where creativity = ${creativityLevel}
+        where creativity = ${creativity}
         ORDER BY RANDOM()
         LIMIT 1
-    `;
+    `
 
-    return randomPhrase[0];
+  return randomPhrase[0]
 }
 
-//TODO: endpoint c0 POST /generate-text
-//req.body.creativity
-//req.body.prompt
+export const testPhrase = async () => {
+  const randomPhrase = await prisma.$queryRaw`
+          SELECT length(name) FROM Phrase
+          ORDER BY length(name) ASC
+      `
+
+  return randomPhrase[0]
+}
+
 export const getOnePhrase = async (req, res) => {
-    try {
-        const creativityLevel = req.body.creativity
-        let phrase = await prisma.phrase.findFirst(({
-            where: {
-                creativity: creativityLevel,
-                name: { contains: req.body.prompt }
-            }
-        }))
+  try {
+    const creativity = req.body.creativity
+    const maxLength = req.body.maxLength
 
-        //TODO: Quitar log
-        console.log(phrase);
+    const chosenWord = req.body.prompt.split(" ").reduce((prev, current)=> (
+        prev.length > current.length ? prev : current
+    ))
 
-        if(phrase === null || req.body.maxLength > phrase.name.length){
-            phrase = getRandomPhrase(creativityLevel)
-        }
-
-        return { phrase, result: "OK"}
-
-    } catch (error) {
-        console.error(error)
+    if (creativity === undefined) {
+      return { message: 'No se han enviado todos los datos', result: 'Error' }
     }
+
+    // const randomSkip = Math.floor(Math.random() * 3)
+
+    let phrase = await prisma.phrase.findFirst({
+      where: {
+        creativity: creativity,
+        name: { contains: chosenWord },
+      },
+    //   skip: randomSkip,
+    })
+
+    if (phrase === null || maxLength < phrase.name.length) {
+      phrase = await getRandomPhrase(creativity)
+      return { phrase, message: 'No hemos encontrado una frase', result: 'maxLength' }
+    }
+
+    return { phrase, result: 'OK' }
+  } catch (err) {
+    console.error(err)
+  }
 }

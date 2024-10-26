@@ -1,22 +1,53 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from '@prisma/client'
 export const prisma = new PrismaClient()
 
-import db_c0 from './db_c0.json' assert { type: 'json' }
-import db_c1 from './db_c1.json' assert { type: 'json' }
+import phrases_creativity_0 from './phrases_creativity_0.json' assert { type: 'json' }
+import phrases_creativity_1 from './phrases_creativity_1.json' assert { type: 'json' }
 
-
-export const resetDB = async () => {
+export const resetPhrase = async () => {
   try {
     await prisma.$executeRaw`DELETE FROM sqlite_sequence WHERE name='Phrase'`
 
     await Promise.all(
-        db_c0.map((phrase) => prisma.phrase.create({ data: phrase }))
+      phrases_creativity_0.map((phrase) =>
+        prisma.phrase.upsert({ 
+          where: {
+            name: phrase.name
+          },
+          create: {
+            name: phrase.name,
+            author: phrase.author,
+            creativity: phrase.creativity,
+          },
+          update: {
+            name: phrase.name,
+            author: phrase.author,
+            creativity: phrase.creativity,
+          }
+        })
+      )
     )
 
     await Promise.all(
-        db_c1.map((phrase) => prisma.phrase.create({ data: phrase }))
+      phrases_creativity_1.map((phrase) =>
+        prisma.phrase.upsert({ 
+          where: {
+            name: phrase.name
+          },
+          create: {
+            name: phrase.name,
+            author: phrase.author,
+            creativity: phrase.creativity,
+          },
+          update: {
+            name: phrase.name,
+            author: phrase.author,
+            creativity: phrase.creativity,
+          }
+        })
+      )
     )
-  } catch (error) {
-        console.error(error)
+  } catch (err) {
+    console.error(err)
   }
 }
