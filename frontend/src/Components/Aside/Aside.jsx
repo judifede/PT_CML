@@ -20,7 +20,6 @@ function Aside({ refreshHistory }) {
     const handleGetHistory = async () => {
       try {
         const historyData = await getHistory()
-        console.log(historyData)
         setHistoryStatus(historyData.result)
         if (historyData.result === 'Error') {
           setHistory(historyData.message)
@@ -36,18 +35,18 @@ function Aside({ refreshHistory }) {
   }, [refreshHistory])
 
   return (
-    <aside className="flex flex-col h-[100vh] bg-white/90 p-10 gap-20 relative">
+    <aside className="flex flex-col lg:h-[100vh] lg:bg-white/90 bg-gray-100/90 p-10 relative">
       <header className='flex flex-col gap-2'>
         <img src="/history.svg" alt="Logo Phrase AI" className="h-8" />
 
         <h2 className="mb-10 text-xl text-center">Historial</h2>
       </header>
-      <section className="flex flex-col gap-3 max-h-[calc(100vh-240px)] overflow-y-auto absolute top-32">
+      <section className="flex flex-col gap-3 max-h-[calc(100vh-040px)] overflow-y-auto">
         {history && historyStatus !== 'Error'
           ? history.map((item) => (
               <article key={item.id} className="hover:bg-gray-200 p-3">
                 <p className="font-semibold text-sm">{formatDate(item.createdAt)}</p>
-                <p>- {item.name}</p>
+                <p className=''>- {item.name}</p>
               </article>
             ))
           : history}

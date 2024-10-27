@@ -2,3 +2,13 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
+@media (max-width: 1024px) {
+  #root {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+  main{
+    grid-row: 1 / 2;
+  }
+}

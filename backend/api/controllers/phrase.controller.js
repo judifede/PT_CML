@@ -17,11 +17,26 @@ const getRandomPhrase = async (creativity) => {
 
 export const testPhrase = async () => {
   const randomPhrase = await prisma.$queryRaw`
-          SELECT length(name) FROM Phrase
-          ORDER BY length(name) ASC
-      `
+    SELECT substr(length(name), 1) as length FROM Phrase
+    ORDER BY length(name) ASC
+  `
 
   return randomPhrase[0]
+}
+
+export const getPhrase = async ({ creativity, chosenWord, maxLength }) => {
+  const likeChosenWord = '%' + chosenWord + '%'
+
+  const phrase = await prisma.$queryRaw`
+    SELECT * FROM Phrase
+    WHERE creativity = ${creativity}
+    AND name LIKE ${likeChosenWord}    
+    AND length(name) <= ${maxLength}
+    ORDER BY RANDOM()
+    LIMIT 1;
+  `
+
+  return phrase.length > 0 ? phrase[0] : null
 }
 
 export const getOnePhrase = async (req, res) => {
@@ -29,30 +44,38 @@ export const getOnePhrase = async (req, res) => {
     const creativity = req.body.creativity
     const maxLength = req.body.maxLength
 
-    const chosenWord = req.body.prompt.split(" ").reduce((prev, current)=> (
+    //Elegimos la palabra más larga
+    const chosenWord = req.body.prompt
+      .split(' ')
+      .reduce((prev, current) =>
         prev.length > current.length ? prev : current
-    ))
+      )
 
     if (creativity === undefined) {
       return { message: 'No se han enviado todos los datos', result: 'Error' }
     }
 
-    // const randomSkip = Math.floor(Math.random() * 3)
+    let phrase = await getPhrase({ creativity, chosenWord, maxLength })
 
-    let phrase = await prisma.phrase.findFirst({
-      where: {
-        creativity: creativity,
-        name: { contains: chosenWord },
-      },
-    //   skip: randomSkip,
-    })
-
-    if (phrase === null || maxLength < phrase.name.length) {
+    if (phrase === null || phrase === undefined || phrase.length === 0) {
       phrase = await getRandomPhrase(creativity)
-      return { phrase, message: 'No hemos encontrado una frase', result: 'maxLength' }
+      return {
+        phrase,
+        message: 'No he encontrado una frase con esa palabra',
+        result: 'Error',
+      }
     }
 
-    return { phrase, result: 'OK' }
+    if (maxLength < phrase.name.length) {
+      phrase = await getRandomPhrase(creativity)
+      return {
+        phrase,
+        message: 'No he encontrado una frase con ese límite',
+        result: 'Error',
+      }
+    }
+
+    return { phrase, message: 'He encontrado la siguiente frase', result: 'OK' }
   } catch (err) {
     console.error(err)
   }

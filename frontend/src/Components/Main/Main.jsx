@@ -25,20 +25,16 @@ function Main({ setRefreshHistory }) {
         creativity: creativity,
       }
       const textData = await generateText(bodyObj)
-      console.log(textData)
 
-      setTextStatus(textData.resultPhrase.result)
+      setTextStatus(
+        textData.result ? textData.result : textData.resultPhrase.result
+      )
       if (textData.result === 'Error') {
-        setTextResponse((TextResponse) => ({
-          ...TextResponse,
-          error: textData.message,
-        }))
-      } else if (textData.resultPhrase.result === 'maxLength') {
         setTextResponse((TextResponse) => ({
           ...TextResponse,
           name: textData.resultPhrase.phrase.name,
           author: textData.resultPhrase.phrase.author,
-          error: textData.resultPhrase.message,
+          error: textData.message,
         }))
       } else {
         setTextResponse((TextResponse) => ({
@@ -62,20 +58,20 @@ function Main({ setRefreshHistory }) {
         <img src="/logo.svg" alt="Logo Phrase AI" className="h-12" />
         <h1 className="text-4xl">Phrase AI</h1>
       </header>
-      <div className="h-[55vh] flex flex-col gap-5 justify-center items-center">
+      <div className="lg:h-[55vh] h-[40vh] flex flex-col gap-5 justify-center items-center">
         <form
           onSubmit={(event) => {
             handleSearch(event)
           }}
           className="flex flex-col gap-5 justify-center items-center"
         >
-          <h2 className="text-3xl">¿Sobre qué palabra quieres una frase?</h2>
+          <h2 className="md:text-3xl text-xl">¿Sobre qué palabra quieres una frase?</h2>
           <div className="flex gap-5">
             <input
               type="search"
               name="search"
               id="search"
-              className="w-96 h-8 p-5 rounded-2xl border border-black/30"
+              className="md:w-96 w-60 h-8 p-5 rounded-2xl border border-black/30"
               autoFocus
             />
             <button className="group flex gap-2 px-3 py-2 bg-slate-200 rounded-2xl hover:bg-blue-600 hover:text-white duration-300">
@@ -119,7 +115,7 @@ function Main({ setRefreshHistory }) {
         </form>
       </div>
       <footer className="flex flex-col items-center">
-        {textResponse.name && textStatus !== 'maxLength' ? (
+        {textResponse.name && textStatus !== 'Error' ? (
           <>
             <p>
               Para encontrar una frase sobre
@@ -133,21 +129,19 @@ function Main({ setRefreshHistory }) {
               <span className="italic">{textResponse.author}</span>
             </p>
           </>
-        ) : textStatus == 'maxLength' ? (
+        ) : textStatus == 'Error' ? (
           <>
             <p className="text-red-400">
-              {textResponse.error} pero te presentamos la siguiente:
+              {textResponse.error}, te propongo la siguiente:
             </p>
             <p className="bg-gray-200 p-2 rounded">
               {textResponse.name} -{' '}
               <span className="italic">{textResponse.author}</span>
             </p>
-            <p>Te invitamos a volver a intentarlo con otra configuración</p>
           </>
         ) : (
           ''
         )}
-        {textStatus === 'Error' && textResponse.error}
       </footer>
     </main>
   )
