@@ -14,7 +14,7 @@
         - **"PhraseResponse"** Respuesta de la IA, dentro de Main que además facilita la **animación de máquina de escribir** al recargar el componente (cambiando el valor de **key** desde el componente Padre).
     - Para asegurar la base de datos durante el desarrollo, empecé por dejar una **función resetPhrase** para mantener las frases. Usando **upsert de Prisma** evitamos que se dupliquen registros o errores relacionados.
 
-# Instalación
+# Guía de Configuración
 
 - 1. Instalamos las dependencias:
 
