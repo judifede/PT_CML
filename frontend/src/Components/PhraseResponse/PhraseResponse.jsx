@@ -6,7 +6,6 @@ function PhraseResponse({
   phraseResponseLength,
   currentSearch,
 }) {
-    
   return (
     <>
       {textResponse.name && textStatus !== 'Error' ? (
@@ -23,7 +22,6 @@ function PhraseResponse({
               style={{
                 '--length_steps': phraseResponseLength,
                 '--length_width': phraseResponseLength + 'ch',
-                'animation-name': 'typing',
               }}
             >
               {textResponse.name + ' - ' + textResponse.author}
@@ -35,7 +33,13 @@ function PhraseResponse({
           <p className="text-red-400">
             {textResponse.error}, te propongo la siguiente:
           </p>
-          <p className="bg-gray-200 p-2 rounded">
+          <p
+            className="bg-gray-200 p-2 rounded maquina_escribir"
+            style={{
+              '--length_steps': phraseResponseLength,
+              '--length_width': phraseResponseLength + 'ch',
+            }}
+          >
             {textResponse.name} -{' '}
             <span className="italic">{textResponse.author}</span>
           </p>
