@@ -33,7 +33,7 @@ Si **tenemos pnpm** podemos iniciar los dos servidores **a la vez**:
 ```
 \PT_CML> npm run dev
 ```
-o
+ó
 ```
 \PT_CML> npm run start
 ```
