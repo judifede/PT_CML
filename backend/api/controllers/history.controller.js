@@ -3,6 +3,7 @@ import { prisma } from '../db/index.db.js'
 export const getHistory = async (req, res) => {
   try {
     const history = await prisma.history.findMany({
+      take: 30,
       orderBy: [
         {
           createdAt: 'desc',

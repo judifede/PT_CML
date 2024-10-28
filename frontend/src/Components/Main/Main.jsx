@@ -4,11 +4,13 @@ import { generateText } from '../../Services/app.service'
 
 import { Tooltip } from 'flowbite-react'
 import SendSVG from '../../assets/SendSVG'
+import PhraseResponse from '../PhraseResponse/PhraseResponse'
 
-function Main({ setRefreshHistory }) {
+function Main({ setRefreshHistory, refreshHistory }) {
   const [currentSearch, setCurrentSearch] = useState('')
   const [textResponse, setTextResponse] = useState({})
   const [textStatus, setTextStatus] = useState('')
+  const [phraseResponseLength, setPhraseResponseLength] = useState(0)
 
   const handleSearch = async (event) => {
     try {
@@ -29,6 +31,14 @@ function Main({ setRefreshHistory }) {
       setTextStatus(
         textData.result ? textData.result : textData.resultPhrase.result
       )
+
+      const calcTextResponseLength =
+        textData.resultPhrase.phrase.author.length +
+        textData.resultPhrase.phrase.name.length +
+        3
+
+      setPhraseResponseLength(calcTextResponseLength)
+
       if (textData.result === 'Error') {
         setTextResponse((TextResponse) => ({
           ...TextResponse,
@@ -45,7 +55,6 @@ function Main({ setRefreshHistory }) {
       }
 
       setCurrentSearch(search)
-
       setRefreshHistory((value) => value + 1)
     } catch (err) {
       console.error(err)
@@ -65,7 +74,9 @@ function Main({ setRefreshHistory }) {
           }}
           className="flex flex-col gap-5 justify-center items-center"
         >
-          <h2 className="md:text-3xl text-xl">¿Sobre qué palabra quieres una frase?</h2>
+          <h2 className="md:text-3xl text-xl">
+            ¿Sobre qué palabra quieres una frase?
+          </h2>
           <div className="flex gap-5">
             <input
               type="search"
@@ -114,34 +125,14 @@ function Main({ setRefreshHistory }) {
           </div>
         </form>
       </div>
-      <footer className="flex flex-col items-center">
-        {textResponse.name && textStatus !== 'Error' ? (
-          <>
-            <p>
-              Para encontrar una frase sobre
-              <span className="font-medium">
-                {" '" + currentSearch + "', "}
-              </span>
-              te presento la siguiente:
-            </p>
-            <p className="bg-gray-200 p-2 rounded">
-              {textResponse.name} -{' '}
-              <span className="italic">{textResponse.author}</span>
-            </p>
-          </>
-        ) : textStatus == 'Error' ? (
-          <>
-            <p className="text-red-400">
-              {textResponse.error}, te propongo la siguiente:
-            </p>
-            <p className="bg-gray-200 p-2 rounded">
-              {textResponse.name} -{' '}
-              <span className="italic">{textResponse.author}</span>
-            </p>
-          </>
-        ) : (
-          ''
-        )}
+      <footer className="flex flex-col w-[560px] m-auto">
+        <PhraseResponse
+          key={refreshHistory} //Al cambiar la key se recarga el componente, habilitando su animación
+          textResponse={textResponse}
+          textStatus={textStatus}
+          phraseResponseLength={phraseResponseLength}
+          currentSearch={currentSearch}
+        ></PhraseResponse>
       </footer>
     </main>
   )
@@ -149,6 +140,7 @@ function Main({ setRefreshHistory }) {
 
 Main.propTypes = {
   setRefreshHistory: PropTypes.func,
+  refreshHistory: PropTypes.number,
 }
 
 export default Main

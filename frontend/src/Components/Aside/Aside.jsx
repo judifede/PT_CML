@@ -6,22 +6,32 @@ function Aside({ refreshHistory }) {
   const [history, setHistory] = useState()
   const [historyStatus, setHistoryStatus] = useState('')
 
-  const formatDate = (dateString) => {
+  const handleDates = (dateString) => {
     const date = new Date(dateString)
-    //TODO: borrar logs
-    // console.log(date.toLocaleString("es-ES"))
-    // console.log(date.toLocaleDateString("es-ES") + " " + date.toLocaleTimeString("es-ES"))
-    return date.toLocaleString('es-ES')
+
+    const month = date.toLocaleString('es-ES', { month: 'short' })
+
+    const returnDate =
+      date.getDate() +
+      ' ' +
+      month.substring(0, 1).toUpperCase() +
+      month.substring(1, month.length) +
+      ' ' +
+      date.getHours() +
+      ':' +
+      date.getMinutes().toString().padStart(2, '0');
+
+    return returnDate
   }
 
   useEffect(() => {
     //TODO: El historial cuando pulsas te muestra la frase que te mostró
-    //TODO: No repetir Año - Mes, etc
     const handleGetHistory = async () => {
       try {
         const historyData = await getHistory()
         setHistoryStatus(historyData.result)
         if (historyData.result === 'Error') {
+          //El historial está vacío
           setHistory(historyData.message)
         } else {
           setHistory(historyData.history)
@@ -36,7 +46,7 @@ function Aside({ refreshHistory }) {
 
   return (
     <aside className="flex flex-col lg:h-[100vh] lg:bg-white/90 bg-gray-100/90 p-10 relative">
-      <header className='flex flex-col gap-2'>
+      <header className="flex flex-col gap-2">
         <img src="/history.svg" alt="Logo Phrase AI" className="h-8" />
 
         <h2 className="mb-10 text-xl text-center">Historial</h2>
@@ -44,10 +54,14 @@ function Aside({ refreshHistory }) {
       <section className="flex flex-col gap-3 max-h-[calc(100vh-040px)] overflow-y-auto">
         {history && historyStatus !== 'Error'
           ? history.map((item) => (
-              <article key={item.id} className="hover:bg-gray-200 p-3">
-                <p className="font-semibold text-sm">{formatDate(item.createdAt)}</p>
-                <p className=''>- {item.name}</p>
-              </article>
+              <>
+                <article key={item.id} className="hover:bg-gray-200 p-3">
+                  <p className="">- {item.name}</p>
+                  <p className="font-semibold text-xs flex justify-end">
+                    {handleDates(item.createdAt)}
+                  </p>
+                </article>
+              </>
             ))
           : history}
       </section>
