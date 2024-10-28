@@ -1,7 +1,7 @@
 # Prueba Técnica CML
 
 - Decisiones técnicas: 
-    - **Mono-repo** con el **workspace de pnpm** por su fácil implementación. Esto nos permite ejecutar el servidor de backend y el de frontend a la vez desde la raíz del proyecto. Más detalles en el apartado de Instalación.
+    - **Mono-repo** con el **workspace de pnpm** por su fácil implementación. Esto nos permite ejecutar el servidor de backend y el de frontend a la vez desde la raíz del proyecto. Más detalles en el apartado de Guía de Configuración.
     - He elegido **Node + React** por ser el stack más reciente que he utilizado para un proyecto de estas características.
     - He elegido **Tailwind** para el sistema de diseño para maquetar más rápido en línea y para la importación de recursos vinculados a éste (**flowbite-react** para el **Tooltip** de "modo creativo" y el fondo de **https://bg.ibelick.com/**)
     - He usado **Prisma** porque me parece un **ORM** muy flexible y mi favorito para Node. Además para facilitar la prueba de la aplicación elegimos **SQLite** como base de datos.
