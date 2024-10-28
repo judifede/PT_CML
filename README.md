@@ -16,7 +16,8 @@
 
 # Instalación
 
-1. Instalamos las dependencias:
+- 1. Instalamos las dependencias:
+
 **Backend:** Puerto 3000
 ```
 \PT_CML> cd backend
@@ -29,9 +30,9 @@
 \frontend> npm i
 ```
 ----------------------------
-2. Creamos un fichero .env en nuestro backend siguiente el ejemplo del .env.example
+- 2. Creamos un fichero .env en nuestro backend siguiente el ejemplo del .env.example
 ----------------------------
-3. Iniciamos los dos servidores:
+- 3. Iniciamos los dos servidores:
 Si **tenemos pnpm** podemos iniciar los dos servidores **a la vez**:
 ```
 \PT_CML> npm run dev
