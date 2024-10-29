@@ -14,14 +14,18 @@ datasource db {
 }
 
 model Phrase {
-  id         Int    @id @default(autoincrement())
-  name       String @unique
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
   author     String
   creativity Int
+  History    History[]
 }
 
 model History {
-  id Int @id @default(autoincrement())
-  name String
+  id        Int      @id @default(autoincrement())
+  name      String
   createdAt DateTime @default(now())
+  errorMessage String?
+  phraseId  Int
+  phrase    Phrase   @relation(fields: [phraseId], references: [id])
 }

@@ -4,9 +4,11 @@ import morgan from 'morgan'
 import express from 'express'
 import cors from 'cors'
 import { resetPhrase } from './api/db/index.db.js'
-import { getHistory } from './api/controllers/history.controller.js'
+import {
+  getHistory,
+  getHistoryById,
+} from './api/controllers/history.controller.js'
 import { handleGenerateText } from './api/controllers/index.controller.js'
-import { testPhrase } from './api/controllers/phrase.controller.js'
 
 const api = express()
 
@@ -19,15 +21,14 @@ api.use(
 )
 api.disable('x-powered-by')
 
-
 try {
   //await resetPhrase()
-  console.log("Length phrase: ", await testPhrase())
 } catch (err) {
   console.error(err)
 }
 
 api.get('/history', getHistory)
+api.get('/history/:id/:phraseId', getHistoryById)
 api.post('/generate-text', handleGenerateText)
 
 api.listen(process.env.API_PORT, async (err) => {

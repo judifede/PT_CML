@@ -7,12 +7,16 @@
     - He usado **Prisma** porque me parece un **ORM** muy flexible y mi favorito para Node. Además para facilitar la prueba de la aplicación elegimos **SQLite** como base de datos.
 
 - Buenas prácticas: 
-    - Las peticiones a la API las gestionamos desde la carpeta **src\Services**. Al ser una aplicación pequeña ubicamos todas en **app.service.js** y **config.js** para la baseURL de nuestros endpoints.
+    - La devolución de la API, exista o no un error, se gestiona con un **objeto** con las siguientes posibilidades:
+
+        - **resultado** (OK o error),
+        - **mensaje** (tipo de error) o el **objeto** con la respuesta de la consulta de base de datos en caso positivo.
+    - Las peticiones a la API las gestionamos desde la carpeta **src\Services**. Al ser una aplicación pequeña ubicamos todas en **app.service.js** y **config.js** para la baseURL de nuestra API. **Si la aplicación escala** permite separar en una **entidad por fichero**, por ejemplo, phrase.service.js o history.service.js.
     - Separación de áreas en componentes:
         - Lógica del **Aside** que gestiona el historial.
         - Lógica del **Main** para la aplicación principal.
         - **"PhraseResponse"** Respuesta de la IA, dentro de Main que además facilita la **animación de máquina de escribir** al recargar el componente (cambiando el valor de **key** desde el componente Padre).
-    - Para asegurar la base de datos durante el desarrollo, empecé por dejar una **función resetPhrase** para mantener las frases. Usando **upsert de Prisma** evitamos que se dupliquen registros o errores relacionados.
+    - Para asegurar la base de datos durante el desarrollo, definimos una **función resetPhrase** para mantener las frases, pasando del formato json a nuestra tabla. Usando **upsert de Prisma** evitamos que se dupliquen registros o errores relacionados, ya que insertará los registros si no existen o los actualizará con los datos correctos.
 
 # Guía de Configuración
 
@@ -58,3 +62,5 @@ Desde la carpeta "backend" se puede usar el comando npx prisma studio para explo
 ```
 \backend> npx prisma studio
 ```
+
+Como hemos usado SQLite también podemos ver el fichero \backend\prisma\dev.db

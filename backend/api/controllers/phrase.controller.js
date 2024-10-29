@@ -15,15 +15,6 @@ const getRandomPhrase = async (creativity) => {
   return randomPhrase[0]
 }
 
-export const testPhrase = async () => {
-  const randomPhrase = await prisma.$queryRaw`
-    SELECT substr(length(name), 1) as length FROM Phrase
-    ORDER BY length(name) ASC
-  `
-
-  return randomPhrase[0]
-}
-
 export const getPhrase = async ({ creativity, chosenWord, maxLength }) => {
   const likeChosenWord = '%' + chosenWord + '%'
 
@@ -75,7 +66,7 @@ export const getOnePhrase = async (req, res) => {
       }
     }
 
-    return { phrase, message: 'He encontrado la siguiente frase', result: 'OK' }
+    return { phrase, result: 'OK' }
   } catch (err) {
     console.error(err)
   }

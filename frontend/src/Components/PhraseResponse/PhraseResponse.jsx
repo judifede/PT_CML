@@ -31,7 +31,7 @@ function PhraseResponse({
       ) : textStatus == 'Error' ? (
         <div>
           <p className="text-red-400">
-            {textResponse.error}, te propongo la siguiente:
+            {textResponse.error}, te propongo:
           </p>
           <p
             className="bg-gray-200 p-2 rounded maquina_escribir"

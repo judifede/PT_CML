@@ -9,10 +9,10 @@ export const resetPhrase = async () => {
     await prisma.$executeRaw`DELETE FROM sqlite_sequence WHERE name='Phrase'`
 
     await Promise.all(
-      phrases_creativity_0.map((phrase) =>
-        prisma.phrase.upsert({ 
+      phrases_creativity_0.map((phrase) => {
+        prisma.phrase.upsert({
           where: {
-            name: phrase.name
+            name: phrase.name,
           },
           create: {
             name: phrase.name,
@@ -23,16 +23,16 @@ export const resetPhrase = async () => {
             name: phrase.name,
             author: phrase.author,
             creativity: phrase.creativity,
-          }
+          },
         })
-      )
+      })
     )
 
     await Promise.all(
-      phrases_creativity_1.map((phrase) =>
-        prisma.phrase.upsert({ 
+      phrases_creativity_1.map((phrase) => {
+        prisma.phrase.upsert({
           where: {
-            name: phrase.name
+            name: phrase.name,
           },
           create: {
             name: phrase.name,
@@ -43,9 +43,9 @@ export const resetPhrase = async () => {
             name: phrase.name,
             author: phrase.author,
             creativity: phrase.creativity,
-          }
+          },
         })
-      )
+      })
     )
   } catch (err) {
     console.error(err)

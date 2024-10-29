@@ -10,7 +10,7 @@ export const generateText = async (bodyObj) => {
 
     return data
   } catch (err) {
-    if(err.response.data.result === 'Error'){
+    if(err.response.data.resultPhrase.result === 'Error'){
       return err.response.data
     }
   }
@@ -19,6 +19,17 @@ export const generateText = async (bodyObj) => {
 export const getHistory = async () => {
   try {
     const { data } = await api.get('/history')
+    return data
+  } catch (err) {
+    if(err.response.data.result === 'Error'){
+      return err.response.data
+    }
+  }
+}
+
+export const getHistoryById = async ({id, phraseId}) => {
+  try {
+    const { data } = await api.get(`/history/${id}/${phraseId}`)
     return data
   } catch (err) {
     if(err.response.data.result === 'Error'){
