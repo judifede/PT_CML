@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { generateText } from '../../Services/app.service'
 
 import { Tooltip } from 'flowbite-react'
-import SendSVG from '../../assets/SendSVG'
 import PhraseResponse from '../PhraseResponse/PhraseResponse'
 
 function Main({ setRefreshHistory, refreshHistory }) {
@@ -64,8 +63,7 @@ function Main({ setRefreshHistory, refreshHistory }) {
   return (
     <main className="p-5">
       <header className="flex gap-2">
-        <img src="/logo.svg" alt="Logo Phrase AI" className="h-12" />
-        <h1 className="text-4xl">Phrase AI</h1>
+        <h1 className="text-4xl font-serif tracking-wider">Phrase AI</h1>
       </header>
       <div className="lg:h-[55vh] h-[40vh] flex flex-col gap-5 justify-center items-center">
         <form
@@ -82,13 +80,9 @@ function Main({ setRefreshHistory, refreshHistory }) {
               type="search"
               name="search"
               id="search"
-              className="md:w-96 w-60 h-8 p-5 rounded-2xl border border-black/30"
+              className="md:w-96 w-60 h-8 p-5 rounded-2xl bg-gray-200 border border-black/30"
               autoFocus
             />
-            <button className="group flex gap-2 px-3 py-2 bg-slate-200 rounded-2xl hover:bg-blue-600 hover:text-white duration-300">
-              Enviar
-              <SendSVG />
-            </button>
           </div>
           <div className="flex gap-5">
             <label

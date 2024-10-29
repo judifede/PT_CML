@@ -51,11 +51,11 @@ function Aside({ refreshHistory }) {
 
         <h2 className="mb-10 text-xl text-center">Historial</h2>
       </header>
-      <section className="flex flex-col gap-3 max-h-[calc(100vh-040px)] overflow-y-auto">
+      <section className="flex flex-col gap-3 max-h-[calc(100vh-040px)] overflow-y-auto relative">
         {history && historyStatus !== 'Error'
           ? history.map((item) => (
               <>
-                <article key={item.id} className="hover:bg-gray-200 p-3">
+                <article key={item.id} className="hover:bg-gray-200 flex flex-col gap-2 p-3 before:content-[''] relative before:absolute before:-bottom-[8px] before:left-1/4 before:bg-gray-300 before:h-[2px] before:w-1/2">
                   <p className="">- {item.name}</p>
                   <p className="font-semibold text-xs flex justify-end">
                     {handleDates(item.createdAt)}
