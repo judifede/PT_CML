@@ -1,8 +1,16 @@
 # Prueba Técnica "Generación de Texto IA"
 
-# Enunciado:
+## Índice:
 
-- Instrucciones Generales:
+1. [Enunciado](#enunciado)
+2. [Guía de Configuración y Uso](#guía-de-configuración-y-uso)
+3. [Base de Datos](#base-de-datos)
+4. [Decisiones técnicas](#decisiones-técnicas)
+5. [Buenas prácticas](#buenas-prácticas)
+
+## Enunciado:
+
+### Instrucciones Generales:
 
     - Este ejercicio evalúa tus habilidades en Front-End y Back-End para construir una aplicación que interactúa con un modelo de IA de generación de texto.
     Se evaluarán las buenas prácticas de programación, el diseño estructurado y el manejo adecuado de la interacción con la IA.
@@ -11,7 +19,7 @@
 
     - Al finalizar, entrega el código junto con un **README** donde expliques las **decisiones técnicas**, cómo aplicaste las **buenas prácticas** y cualquier otra consideración importante.
 
-- Desarrollo:
+### Desarrollo:
     - Descripción del Problema:
     Vas a desarrollar una aplicación que permita a los usuarios generar texto utilizando una API que simule el comportamiento de una Inteligencia Artificial para generación de texto.
 
@@ -50,7 +58,7 @@
             - Validar los valores numéricos (por ejemplo, asegurarse de que maxLength esté entre 10 y 1000, y temperature entre 0 y 1).
             - La interfaz debe ser responsiva y estar diseñada de manera clara y sencilla, sin necesidad de un diseño gráfico avanzado, pero sí con un enfoque en la usabilidad.
 
-# Guía de Configuración
+## Guía de Configuración y Uso
 
 1. Instalamos las dependencias:
 
@@ -86,7 +94,7 @@
     \frontend> npm run dev
     ```
 
-# Base de Datos
+## Base de Datos
 
 Desde la carpeta "backend" se puede usar el comando npx prisma studio para explorar la base de datos en el puerto 5555.
 
@@ -96,14 +104,14 @@ Desde la carpeta "backend" se puede usar el comando npx prisma studio para explo
 
 Como hemos usado SQLite también podemos ver el fichero \backend\prisma\dev.db
 
-# Decisiones técnicas: 
+## Decisiones técnicas: 
 
 - **Mono-repo** con el **workspace de pnpm** por su fácil implementación. Esto nos permite ejecutar el servidor de backend y el de frontend a la vez desde la raíz del proyecto. Más detalles en el apartado de Guía de Configuración.
 - He elegido **Node + React** por ser el stack más reciente que he utilizado para un proyecto de estas características.
 - He elegido **Tailwind** para el sistema de diseño para maquetar más rápido y para la importación de recursos vinculados a éste (**flowbite-react** para el **Tooltip** de "modo creativo" y el fondo de **https://bg.ibelick.com/**).
 - He usado **Prisma** porque me parece un **ORM** muy flexible y mi favorito para Node. Además para facilitar la prueba de la aplicación elegimos **SQLite** como base de datos.
 
-# Buenas prácticas: 
+## Buenas prácticas: 
 
 - La devolución de la API, exista o no un error, se gestiona con un **objeto** con las siguientes posibilidades:
 
