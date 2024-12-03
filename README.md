@@ -8,7 +8,10 @@
 4. [Decisiones técnicas](#decisiones-técnicas)
 5. [Buenas prácticas](#buenas-prácticas)
 
-## Enunciado:
+
+
+<details>
+<summary>Ver Enunciado</summary>
 
 ### Instrucciones Generales:
 
@@ -57,6 +60,7 @@
             - Asegúrate de que el campo del prompt no esté vacío antes de enviar la solicitud.
             - Validar los valores numéricos (por ejemplo, asegurarse de que maxLength esté entre 10 y 1000, y temperature entre 0 y 1).
             - La interfaz debe ser responsiva y estar diseñada de manera clara y sencilla, sin necesidad de un diseño gráfico avanzado, pero sí con un enfoque en la usabilidad.
+</details>
 
 ## Guía de Configuración y Uso
 
@@ -93,40 +97,67 @@
     ```
     \frontend> npm run dev
     ```
+---
+4. Posibles acciones:
+- Activar o no el modo creativo.
+- Definir la longitud máxima de la frase.
+- Escribir una palabra en la barra de búsqueda y pulsar Enter.
+- Cargar otro resultado desde el historial.
 
 ## Base de Datos
 
-1. Trabajamos con dos tablas:
+- Trabajamos con dos tablas:
 
-- Phrase: Todas las frases que se pueden generar junto a su autor.
-- History: El historial de la aplicación donde guardamos el prompt enviado, fecha de la búsqueda, la id de la frase generada y el posible error que se muestra al usarlo para volver a cargarlo.
+    - Phrase: Todas las frases que se pueden generar junto a su autor.
+    - History: El historial de la aplicación donde guardamos el prompt enviado, fecha de la búsqueda, la id de la frase generada y el posible error que se muestra al usarlo para volver a cargarlo.
 
 ![DBDiagram](https://github.com/user-attachments/assets/25b803c9-f93e-4765-96f6-78487908c17c)
 
-2. Desde la carpeta "backend" se puede usar el comando npx prisma studio para explorar la base de datos en el puerto 5555.
+- Desde la carpeta "backend" se puede usar el comando npx prisma studio para explorar la base de datos en el puerto 5555.
 
 ```
 \backend> npx prisma studio
 ```
 
-Como hemos usado SQLite también podemos ver el fichero \backend\prisma\dev.db
+- Como hemos usado SQLite también podemos ver el fichero \backend\prisma\dev.db
+
+## Endpoints
+<details>
+<summary>Ver Endpoints</summary>
+
+| Método | ENDPOINT                              | DESCRIPCIÓN                | RETURNS                  
+| ------ | ------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------|
+| GET    | {{baseURL}}/history                   | Lista el historial                                  | OK:{ history, result: 'OK' } Error:{ message, result: 'Error' }     |     
+| GET    | {{baseURL}}/history/:id/:phraseId     | Obtiene los datos de una frase del histórico        | OK:{ history, result: 'OK' } Error:{ message, result: 'Error' }     |     
+| POST   | {{baseURL}}/generate-text             | Busca una frase por el prompt del usuario y<br/> guarda el resultado de la acción en el historial          | { events }         |   
+</details>
 
 ## Decisiones técnicas: 
 
+<details>
+<summary>Ver Decisiones técnicas</summary>
 - **Mono-repo** con el **workspace de pnpm** por su fácil implementación. Esto nos permite ejecutar el servidor de backend y el de frontend a la vez desde la raíz del proyecto. Más detalles en el apartado de Guía de Configuración.
 - He elegido **Node + React** por ser el stack más reciente que he utilizado para un proyecto de estas características.
 - He elegido **Tailwind** para el sistema de diseño para maquetar más rápido y para la importación de recursos vinculados a éste (**flowbite-react** para el **Tooltip** de "modo creativo" y el fondo de **https://bg.ibelick.com/**).
 - He usado **Prisma** porque me parece un **ORM** muy flexible y mi favorito para Node. Además para facilitar la prueba de la aplicación elegimos **SQLite** como base de datos.
+</details>
 
 ## Buenas prácticas: 
 
-- La devolución de la API, exista o no un error, se gestiona con un **objeto** con las siguientes posibilidades:
+<details>
+<summary>Ver Buenas prácticas</summary>
 
+- La devolución de la API, exista o no un error, se gestiona con un **objeto** con las siguientes posibilidades:
     - **resultado** (OK o error),
     - **mensaje** (tipo de error) o el **objeto** con la respuesta de la consulta de base de datos en caso positivo.
+
 - Las peticiones a la API las gestionamos desde la carpeta **src\Services**. Al ser una aplicación pequeña ubicamos todas en **app.service.js** y **config.js** para la baseURL de nuestra API. **Si la aplicación escala** permite separar en una **entidad por fichero**, por ejemplo, phrase.service.js o history.service.js.
+
 - Separación de áreas en componentes:
     - Lógica del **Aside** que gestiona el historial.
     - Lógica del **Main** para la aplicación principal.
     - **"PhraseResponse"** Respuesta de la IA, dentro de Main que además facilita la **animación de máquina de escribir** al recargar el componente (cambiando el valor de **key** desde el componente Padre).
+
 - Para asegurar la base de datos durante el desarrollo, definimos una **función resetPhrase** para mantener las frases, pasando del formato json a nuestra tabla. Usando **upsert de Prisma** evitamos que se dupliquen registros o errores relacionados, ya que insertará los registros si no existen o los actualizará con los datos correctos.
+
+</details>
