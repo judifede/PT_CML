@@ -1,4 +1,4 @@
-# Prueba Técnica CML
+# Prueba Técnica "Generación de Texto IA"
 
 - Decisiones técnicas: 
     - **Mono-repo** con el **workspace de pnpm** por su fácil implementación. Esto nos permite ejecutar el servidor de backend y el de frontend a la vez desde la raíz del proyecto. Más detalles en el apartado de Guía de Configuración.
@@ -24,13 +24,13 @@
 
 **Backend:** Puerto 3000
 ```
-\PT_CML> cd backend
+\Carpeta Raíz del proyecto> cd backend
 \backend> npm i
 ```
 
 **Frontend:** Puerto 4000
 ```
-\PT_CML> cd frontend
+\Carpeta Raíz del proyecto> cd frontend
 \frontend> npm i
 ```
 ----------------------------
@@ -39,11 +39,11 @@
 - 3. Iniciamos los dos servidores:
 Si **tenemos pnpm** podemos iniciar los dos servidores **a la vez**:
 ```
-\PT_CML> npm run dev
+\Carpeta Raíz del proyecto> npm run dev
 ```
 ó
 ```
-\PT_CML> npm run start
+\Carpeta Raíz del proyecto> npm run start
 ```
 ----------------------------
 Si **no tenemos pnpm** debemos iniciar ambos servidores de forma **individual**:
