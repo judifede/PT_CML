@@ -8,8 +8,6 @@
 4. [Decisiones técnicas](#decisiones-técnicas)
 5. [Buenas prácticas](#buenas-prácticas)
 
-
-
 <details>
 <summary>Ver Enunciado</summary>
 
