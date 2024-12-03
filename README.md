@@ -96,7 +96,14 @@
 
 ## Base de Datos
 
-Desde la carpeta "backend" se puede usar el comando npx prisma studio para explorar la base de datos en el puerto 5555.
+1. Trabajamos con dos tablas:
+
+- Phrase: Todas las frases que se pueden generar junto a su autor.
+- History: El historial de la aplicación donde guardamos el prompt enviado, fecha de la búsqueda, la id de la frase generada y el posible error que se muestra al usarlo para volver a cargarlo.
+
+![DBDiagram](https://github.com/user-attachments/assets/25b803c9-f93e-4765-96f6-78487908c17c)
+
+2. Desde la carpeta "backend" se puede usar el comando npx prisma studio para explorar la base de datos en el puerto 5555.
 
 ```
 \backend> npx prisma studio
