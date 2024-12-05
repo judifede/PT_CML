@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter \"**\" dev",
+    "dev": "pnpm --filter \"**\" start",
     "start": "pnpm --filter \"**\" start",
     "back": "pnpm --filter \"backend\" dev",
     "front": "pnpm --filter \"frontend\" dev",

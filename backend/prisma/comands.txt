@@ -6,3 +6,12 @@ npx prisma db pull
 
 npx prisma db push
     Sincroniza el schema con la base de datos sin crear migraciones.
+
+npx prisma generate
+    Genera el cliente Prisma
+    
+------------------------------------
+wsl y luego turso
+------------------------------------
+
+sqlite3 your_database.db < backup.sql

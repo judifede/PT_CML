@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { getHistory, getHistoryById } from '../../Services/app.service'
-import { calcTextResponseLength } from '../../utils'
+import { calcTextResponseLength } from '../../utils/utils.js'
 
 function Aside({ refreshHistory, setRefreshChosenHistory, setChosenHistory }) {
   const [history, setHistory] = useState([])

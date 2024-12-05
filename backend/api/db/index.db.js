@@ -1,5 +1,15 @@
 import { PrismaClient } from '@prisma/client'
-export const prisma = new PrismaClient()
+import { createClient } from '@libsql/client'
+import { PrismaLibSQL } from '@prisma/adapter-libsql'
+
+const libsql = createClient({
+  url: process.env.TURSO_DATABASE_URL,
+  authToken: process.env.TURSO_AUTH_TOKEN,
+})
+
+const adapter = new PrismaLibSQL(libsql)
+
+export const prisma = new PrismaClient({ adapter })
 
 import phrases_creativity_0 from './phrases_creativity_0.json' assert { type: 'json' }
 import phrases_creativity_1 from './phrases_creativity_1.json' assert { type: 'json' }

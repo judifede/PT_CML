@@ -7,18 +7,21 @@
   "scripts": {
     "dev": "node --watch index.js",
     "start": "node index.js",
+    "backup": "node api/db/exportData.js",
     "savedb": "npx prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@libsql/client": "^0.8.1",
+    "@prisma/adapter-libsql": "^6.0.1",
     "@prisma/client": "^5.21.1",
     "cors": "^2.8.5",
     "dotenv": "16.4.5",
     "express": "4.21.1",
     "morgan": "1.10.0",
-    "prisma": "5.21.1"
+    "prisma": "^5.21.1"
   },
   "devDependencies": {
     "standard": "17.1.2"

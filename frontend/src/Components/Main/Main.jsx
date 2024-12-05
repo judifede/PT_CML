@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { generateText } from '../../Services/app.service'
+import PhraseResponse from '../PhraseResponse/PhraseResponse'
+import { calcTextResponseLength } from '../../utils/utils.js'
 
 import { Tooltip } from 'flowbite-react'
-import PhraseResponse from '../PhraseResponse/PhraseResponse'
-import { calcTextResponseLength } from '../../utils'
+import useDebounce from '../../hooks/hooks.jsx'
 
 function Main({
   setRefreshHistory,
@@ -32,8 +33,6 @@ function Main({
 
   const handleSearch = async (event) => {
     try {
-      event.preventDefault()
-
       const fields = new window.FormData(event.target)
       const search = fields.get('search')
       const creativity = fields.get('creativity') === null ? 0 : 1
@@ -81,6 +80,13 @@ function Main({
     }
   }
 
+  const debouncedHandleSearch = useDebounce(handleSearch, 800)
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+    debouncedHandleSearch(event)
+  }
+
   return (
     <main className="p-5">
       <header className="flex gap-2">
@@ -89,7 +95,7 @@ function Main({
       <div className="lg:h-[55vh] h-[40vh] flex flex-col gap-5 justify-center items-center">
         <form
           onSubmit={(event) => {
-            handleSearch(event)
+            onSubmit(event)
           }}
           className="flex flex-col gap-5 justify-center items-center"
         >
@@ -102,7 +108,7 @@ function Main({
               name="search"
               id="search"
               className="md:w-96 w-60 h-8 p-5 rounded-2xl bg-gray-200 border border-black/30"
-              placeholder='vida'
+              placeholder="vida"
               autoFocus
             />
           </div>
