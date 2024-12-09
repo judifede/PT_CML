@@ -9,6 +9,8 @@
     "start": "node index.js",
     "backup": "node api/db/exportData.js",
     "savedb": "npx prisma migrate dev",
+    "build": "prisma generate && next build",
+    "postinstall": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
