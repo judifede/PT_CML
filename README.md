@@ -109,6 +109,13 @@ Vas a desarrollar una aplicación que permita a los usuarios generar texto utili
 
 ## Base de Datos
 
+Nos basaremos en el fichero **schema_remote_turso.prisma** en la carpeta /backend/prisma para el cliente Prisma remoto y en el fichero **schema_local.prisma** para el SQLite local en dicha carpeta.
+
+Prisma usará **schema.prisma** para su configuración, cuando lo hayamos definido o cuando lo modifiquemos, debemos usar el siguiente comando para generar el cliente Prisma: 
+```
+\backend> npx prisma generate
+```
+
 - Trabajamos con dos tablas:
 
     - Phrase: Todas las frases que se pueden generar junto a su autor.
@@ -132,6 +139,10 @@ Vas a desarrollar una aplicación que permita a los usuarios generar texto utili
 
 <details>
 <summary>Ver Endpoints</summary>
+
+baseURL depende de la variable de entorno APP_ENV en .env:
+- Será 'http://localhost:3000' con APP_ENV = 'dev'
+- Y 'https://pt-generacion-texto-ia-backend.vercel.app/' con APP_ENV = 'production'
 
 | Método | ENDPOINT                              | DESCRIPCIÓN                | RETURNS                  
 | ------ | ------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------|
