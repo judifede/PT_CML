@@ -42,7 +42,7 @@ function Aside({ refreshHistory, setRefreshChosenHistory, setChosenHistory }) {
       setRefreshChosenHistory((value) => value + 1)
 
     } catch (err) {
-      console.error(err)
+      return err.message
     }
   }
 
@@ -59,7 +59,7 @@ function Aside({ refreshHistory, setRefreshChosenHistory, setChosenHistory }) {
           setHistory(historyData.history)
         }
       } catch (err) {
-        console.error(err)
+          return err.message
       }
     }
 

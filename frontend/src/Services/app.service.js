@@ -10,6 +10,9 @@ export const generateText = async (bodyObj) => {
 
     return data
   } catch (err) {
+    if(err.message === 'Network Error'){
+      console.log("Sin acceso al servidor")
+    }
     if(err.response.data.resultPhrase.result === 'Error'){
       return err.response.data
     }
@@ -21,6 +24,10 @@ export const getHistory = async () => {
     const { data } = await api.get('/history')
     return data
   } catch (err) {
+    if(err.message === 'Network Error'){
+      console.log("Sin acceso al servidor")
+      return
+    }
     if(err.response.data.result === 'Error'){
       return err.response.data
     }
@@ -32,6 +39,11 @@ export const getHistoryById = async ({id, phraseId}) => {
     const { data } = await api.get(`/history/${id}/${phraseId}`)
     return data
   } catch (err) {
+    if(err.message === 'Network Error'){
+      console.log("Sin acceso al servidor")
+      return
+
+    }
     if(err.response.data.result === 'Error'){
       return err.response.data
     }
