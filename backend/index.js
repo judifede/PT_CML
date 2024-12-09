@@ -21,11 +21,11 @@ api.use(
 )
 api.disable('x-powered-by')
 
-try {
-  //await resetPhrase()
-} catch (err) {
-  console.error(err)
-}
+// try {
+//   await resetPhrase()
+// } catch (err) {
+//   console.error(err)
+// }
 
 api.get('/history', getHistory)
 api.get('/history/:id/:phraseId', getHistoryById)

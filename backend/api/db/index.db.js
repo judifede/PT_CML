@@ -11,8 +11,8 @@ const adapter = new PrismaLibSQL(libsql)
 
 export const prisma = new PrismaClient({ adapter })
 
-import phrases_creativity_0 from './phrases_creativity_0.json' assert { type: 'json' }
-import phrases_creativity_1 from './phrases_creativity_1.json' assert { type: 'json' }
+import phrases_creativity_0 from './phrases_creativity_0.json' with { type: 'json' }
+import phrases_creativity_1 from './phrases_creativity_1.json' with { type: 'json' }
 
 export const resetPhrase = async () => {
   try {
